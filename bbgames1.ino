@@ -42,7 +42,7 @@ void loop()
   Screen.putText("Bread", 5, 95, 50, RGBToWord(0xff, 0xff, 0x0), 0);
   Screen.putText("Board", 5, 95, 70, RGBToWord(0xff, 0xff, 0x0), 0);
   Screen.putText("Games!", 5, 95, 90, RGBToWord(0xff, 0xff, 0x0), 0);
-  Screen.putText("Press Left for Breakout", 23, 5, 120, RGBToWord(0xff, 0x3f, 0x3f), 0);
+  Screen.putText("Press Left for Brici", 20, 5, 120, RGBToWord(0xff, 0x3f, 0x3f), 0);
   Screen.putText("Press Right for Galaga", 22, 5, 140, RGBToWord(0x1f, 0xff, 0x1f), 0);
   Screen.putText("https://ioprog.com/bbg", 22, 5, 200, RGBToWord(0xff, 0xff, 0xff), 0);
   
@@ -52,7 +52,7 @@ void loop()
     if (LeftPressed())
     {
       GameStarted = 1;
-      PlayBreakout();
+      PlayBrici();
     }
     if (RightPressed())
     {
@@ -62,10 +62,10 @@ void loop()
     random(100); // cycle the random number generator
   }
 }
-void PlayBreakout()
+void PlayBrici()
 {
-#define MAX_BREAKOUT_LEVELS 4
-  int Level = MAX_BREAKOUT_LEVELS;
+#define MAX_BRICI_LEVELS 4
+  int Level = MAX_BRICI_LEVELS;
   int LevelComplete = 0;
   int8_t BallCount = 5;
   uint8_t Index;
@@ -83,7 +83,7 @@ void PlayBreakout()
   Sprite Ball(BALL, 120, 90, 3, 3);
   // put your setup code here, to run once:
   Screen.fillRectangle(0, 0, 240, 320, 0);
-  Screen.putText("MCU Breakout", 12, 10, 40, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
+  Screen.putText("Brici", 5, 10, 40, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
   delay(500);
   while (Level > 0)
   {
@@ -105,7 +105,7 @@ void PlayBreakout()
     Ball.show();
     Bat.show();
     Screen.putText("Level", 5, 5, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
-    Screen.putNumber(MAX_BREAKOUT_LEVELS - Level + 1, 60, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
+    Screen.putNumber(MAX_BRICI_LEVELS - Level + 1, 60, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
     while (!LevelComplete)
     {
       if (RightPressed())
@@ -183,7 +183,7 @@ void PlayBreakout()
       {
         Level--;
         Screen.putText("Level", 5, 5, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
-        Screen.putNumber(MAX_BREAKOUT_LEVELS - Level + 1, 60, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
+        Screen.putNumber(MAX_BRICI_LEVELS - Level + 1, 60, 300, RGBToWord(0xff, 0xff, 0xff), RGBToWord(0, 0, 0));
 
       }
       delay(Level); // Slow the game to human speed

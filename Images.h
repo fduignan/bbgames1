@@ -128,7 +128,7 @@ const uint16_t ExplosionImage[] = { \
     BGND,BGND,BGND,BGND,EXPL,EXPL,BGND,BGND,BGND,BGND,\
     };      
     
-// Image definitions for breakout
+// Image definitions for brici
 
 #define YLBK RGBToWord(255, 255, 48)
 
